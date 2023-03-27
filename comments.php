@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 	?>
 		<h2 id="comments-title">
 			<?php
-				esc_html_e( 'No Comments yet!', 'bootstrap-nutriwiki' );
+				esc_html_e( 'Ten post nie posiada jeszcze komentarzy!', 'bootstrap-nutriwiki' );
 			?>
 		</h2>
 	<?php
@@ -30,13 +30,13 @@ if ( post_password_required() ) {
 			<?php
 				$comments_number = get_comments_number();
 				if ( '1' === $comments_number ) {
-					printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'bootstrap-nutriwiki' ), get_the_title() );
+					printf( _x( 'Jedna odpowiedź do &ldquo;%s&rdquo;', 'comments title', 'bootstrap-nutriwiki' ), get_the_title() );
 				} else {
 					printf(
 						/* translators: 1: number of comments, 2: post title */
 						_nx(
-							'%1$s Reply to &ldquo;%2$s&rdquo;',
-							'%1$s Replies to &ldquo;%2$s&rdquo;',
+							'%1$s Odpowiedź &ldquo;%2$s&rdquo;',
+							'%1$s Odpowiedzi do &ldquo;%2$s&rdquo;',
 							$comments_number,
 							'comments title',
 							'bootstrap-nutriwiki'
@@ -51,9 +51,9 @@ if ( post_password_required() ) {
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
 		<nav id="comment-nav-above">
-			<h1 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'bootstrap-nutriwiki' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'bootstrap-nutriwiki' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'bootstrap-nutriwiki' ) ); ?></div>
+			<h1 class="assistive-text"><?php esc_html_e( 'Nawigacja', 'bootstrap-nutriwiki' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Starsze komentarze', 'bootstrap-nutriwiki' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Nowsze komentarze &rarr;', 'bootstrap-nutriwiki' ) ); ?></div>
 		</nav>
 		<?php
 			endif;
@@ -74,9 +74,9 @@ if ( post_password_required() ) {
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'bootstrap-nutriwiki' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'bootstrap-nutriwiki' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'bootstrap-nutriwiki' ) ); ?></div>
+			<h1 class="assistive-text"><?php esc_html_e( 'Nawigacja', 'bootstrap-nutriwiki' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Starsze komentarze', 'bootstrap-nutriwiki' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Nowsze komentarze &rarr;', 'bootstrap-nutriwiki' ) ); ?></div>
 		</nav>
 		<?php
 			endif;
@@ -87,7 +87,7 @@ if ( post_password_required() ) {
 		 */
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<h2 id="comments-title" class="nocomments"><?php esc_html_e( 'Comments are closed.', 'bootstrap-nutriwiki' ); ?></h2>
+		<h2 id="comments-title" class="nocomments"><?php esc_html_e( 'Komentarze zostały wyłączone', 'bootstrap-nutriwiki' ); ?></h2>
 	<?php
 		endif;
 

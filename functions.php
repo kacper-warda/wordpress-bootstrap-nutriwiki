@@ -356,7 +356,7 @@ if ( ! function_exists( 'bootstrap_nutriwiki_comment' ) ) {
 				<?php
 					esc_html_e( 'Pingback:', 'bootstrap-nutriwiki' );
 					comment_author_link();
-					edit_comment_link( esc_html__( 'Edit', 'bootstrap-nutriwiki' ), '<span class="edit-link">', '</span>' );
+					edit_comment_link( esc_html__( 'Edytuj', 'bootstrap-nutriwiki' ), '<span class="magrin-left-10 edit-link">', '</span>' );
 				?>
 			</p>
 	<?php
@@ -379,17 +379,17 @@ if ( ! function_exists( 'bootstrap_nutriwiki_comment' ) ) {
 									esc_url( get_comment_link( $comment->comment_ID ) ),
 									get_comment_time( 'c' ),
 									/* Translators: 1: Date, 2: Time */
-									sprintf( esc_html__( '%1$s ago', 'bootstrap-nutriwiki' ), human_time_diff( (int) get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
+									sprintf( esc_html__( '%1$s temu', 'bootstrap-nutriwiki' ), human_time_diff( (int) get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
 								)
 							);
 
-							edit_comment_link( esc_html__( 'Edit', 'bootstrap-nutriwiki' ), '<span class="edit-link">', '</span>' );
+							edit_comment_link( esc_html__( 'Edytuj', 'bootstrap-nutriwiki' ), '<span class="edit-link">', '</span>' );
 						?>
 					</div><!-- .comment-author .vcard -->
 
 					<?php if ( '0' === $comment->comment_approved ) { ?>
 						<em class="comment-awaiting-moderation">
-							<?php esc_html_e( 'Your comment is awaiting moderation.', 'bootstrap-nutriwiki' ); ?>
+							<?php esc_html_e( 'Komentarz oczekuje na akceptację.', 'bootstrap-nutriwiki' ); ?>
 						</em>
 						<br />
 					<?php } ?>
@@ -403,7 +403,7 @@ if ( ! function_exists( 'bootstrap_nutriwiki_comment' ) ) {
 							array_merge(
 								$args,
 								array(
-									'reply_text' => esc_html__( 'Reply', 'bootstrap-nutriwiki' ) . ' <span>&darr;</span>',
+									'reply_text' => esc_html__( 'Odpowiedz', 'bootstrap-nutriwiki' ) . ' <span>&darr;</span>',
 									'depth'      => $depth,
 									'max_depth'  => $args['max_depth'],
 								)
@@ -463,22 +463,22 @@ if ( ! function_exists( 'bootstrap_nutriwiki_comment' ) ) {
 			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field'        => '<div class="form-floating mb-3">
 											<textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . esc_attr__( 'Comment', 'bootstrap-nutriwiki' ) . ( $req ? '*' : '' ) . '"></textarea>
-											<label for="comment">' . esc_html__( 'Comment', 'bootstrap-nutriwiki' ) . '</label>
+											<label for="comment">' . esc_html__( 'Komentarz', 'bootstrap-nutriwiki' ) . '</label>
 										</div>',
 			/** This filter is documented in wp-includes/link-template.php */
-			'must_log_in'          => '<p class="must-log-in">' . sprintf( wp_kses_post( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'bootstrap-nutriwiki' ) ), wp_login_url( esc_url( get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
+			'must_log_in'          => '<p class="must-log-in">' . sprintf( wp_kses_post( __( 'Musisz być <a href="%s">zalogowany/a</a> aby dodać komentarz.', 'bootstrap-nutriwiki' ) ), wp_login_url( esc_url( get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
 			/** This filter is documented in wp-includes/link-template.php */
-			'logged_in_as'         => '<p class="logged-in-as">' . sprintf( wp_kses_post( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'bootstrap-nutriwiki' ) ), get_edit_user_link(), $user->display_name, wp_logout_url( apply_filters( 'the_permalink', esc_url( get_the_permalink( get_the_ID() ) ) ) ) ) . '</p>',
-			'comment_notes_before' => '<p class="small comment-notes">' . esc_html__( 'Your Email address will not be published.', 'bootstrap-nutriwiki' ) . '</p>',
+			'logged_in_as'         => '<p class="logged-in-as">' . sprintf( wp_kses_post( __( 'Zalogowany jako <a href="%1$s">%2$s</a>. <a href="%3$s" title="Wyloguj się">Wylogować?</a>', 'bootstrap-nutriwiki' ) ), get_edit_user_link(), $user->display_name, wp_logout_url( apply_filters( 'the_permalink', esc_url( get_the_permalink( get_the_ID() ) ) ) ) ) . '</p>',
+			'comment_notes_before' => '<p class="small comment-notes">' . esc_html__( 'Twój adres email nie zostanie opublikowany.', 'bootstrap-nutriwiki' ) . '</p>',
 			'comment_notes_after'  => '',
 			'id_form'              => 'commentform',
 			'id_submit'            => 'submit',
 			'class_submit'         => 'btn btn-primary',
 			'name_submit'          => 'submit',
 			'title_reply'          => '',
-			'title_reply_to'       => esc_html__( 'Leave a Reply to %s', 'bootstrap-nutriwiki' ),
-			'cancel_reply_link'    => esc_html__( 'Cancel reply', 'bootstrap-nutriwiki' ),
-			'label_submit'         => esc_html__( 'Post Comment', 'bootstrap-nutriwiki' ),
+			'title_reply_to'       => esc_html__( 'Dodaj odpowiedź %s', 'bootstrap-nutriwiki' ),
+			'cancel_reply_link'    => esc_html__( 'Anuluj', 'bootstrap-nutriwiki' ),
+			'label_submit'         => esc_html__( 'Dodaj komentarz', 'bootstrap-nutriwiki' ),
 			'submit_button'        => '<input type="submit" id="%2$s" name="%1$s" class="%3$s" value="%4$s" />',
 			'submit_field'         => '<div class="form-submit">%1$s %2$s</div>',
 			'format'               => 'html5',

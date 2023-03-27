@@ -3,7 +3,7 @@ Theme Name: bootstrap-nutriwiki
 Theme URI: https://them.es/starter
 Author: kacper
 Author URI: https://them.es/
-Description: 
+Description:
 Version: 3.3.5
 Requires at least: 5.0
 Tested up to: 6.2
@@ -202,4 +202,12 @@ a img.aligncenter {
 	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
+}
+
+.margin-left-10 {
+	margin-left: 10px;
+}
+
+.comment-reply-title > h3 > small {
+	margin-left: 10px;
 }
