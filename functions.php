@@ -66,6 +66,7 @@ if ( ! function_exists( 'bootstrap_nutriwiki_setup_theme' ) ) {
 
 		// Custom CSS styles of WorPress gallery.
 		add_filter( 'use_default_gallery_style', '__return_false' );
+		add_filter( 'login_display_language_dropdown', '__return_false' );
 	}
 	add_action( 'after_setup_theme', 'bootstrap_nutriwiki_setup_theme' );
 
